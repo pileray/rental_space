@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_08_015820) do
 
   create_table "spaces", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
-    t.text "despcription", null: false
+    t.text "description", null: false
     t.string "address"
     t.string "nearest_station"
     t.float "latitude"
