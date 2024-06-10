@@ -27,4 +27,8 @@ class Space < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["feature_mappings", "features", "images_attachments", "images_blobs", "space_type_mappings", "space_types"]
   end
+
+  def main_image
+    images.first || 'http://placehold.jp/300x200.png'
+  end
 end
