@@ -18,6 +18,20 @@ class SpacesController < ApplicationController
     end
   end
 
+  def edit
+    @space = Space.find(params[:id])
+  end
+
+  def update
+    @space = Space.find(params[:id])
+    if @space.update(space_params)
+      redirect_to @space, success: '更新しました'
+    else
+      flash.now[:error] = '失敗しました'
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
     @space = Space.find(params[:id])
   end
